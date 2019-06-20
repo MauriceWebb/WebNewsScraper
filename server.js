@@ -29,10 +29,10 @@ app.use(express.static("public"));
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/webscraper1", { useNewUrlParser: true });
+// mongoose.connect("mongodb://localhost/webscraper1", { useNewUrlParser: true });
 
 // Routes
 
